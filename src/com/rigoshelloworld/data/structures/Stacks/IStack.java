@@ -14,5 +14,5 @@ public interface IStack<T> {
     public T        pop();
     public void     push(T data);
     public int      search(T data);
-    public int      size();    
+    public int      getSize();    
 }

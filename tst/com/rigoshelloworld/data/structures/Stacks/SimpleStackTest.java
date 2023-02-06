@@ -15,7 +15,7 @@ import com.rigoshelloworld.data.structures.Stacks.SimpleStackFromList;
 
 
 public class SimpleStackTest {
-    SimpleStackFromList<Object> stack;
+    private SimpleStackFromList<Object> stack;
     
     @Before
     public void initalizeStack() {
@@ -26,7 +26,7 @@ public class SimpleStackTest {
     public void pushOneItemOnStackTestSize() {
         Object val = 1;
         stack.push(val);
-        assertEquals(1,stack.size());
+        assertEquals(1,stack.getSize());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class SimpleStackTest {
         Object val2 = 2;
         stack.push(val1);
         stack.push(val2);
-        assertEquals(2,stack.size());
+        assertEquals(2,stack.getSize());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class SimpleStackTest {
 
     @Test
     public void testEmptyStackSize(){
-        assertEquals(0,stack.size());
+        assertEquals(0,stack.getSize());
     }
 
     @Test (expected = EmptyStackException.class)

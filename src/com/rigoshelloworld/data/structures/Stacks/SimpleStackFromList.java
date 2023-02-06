@@ -13,7 +13,7 @@ import java.util.List;
  * size                 DONE
  */
 public class SimpleStackFromList<T> implements IStack<T>{
-    List<T> list;
+    private List<T> list;
 
     public SimpleStackFromList() {
         list = new ArrayList<>();
@@ -25,7 +25,7 @@ public class SimpleStackFromList<T> implements IStack<T>{
     }
 
     @Override
-    public int size() {
+    public int getSize() {
         return list.size();
     }
 
