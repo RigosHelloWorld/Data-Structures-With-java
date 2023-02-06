@@ -23,36 +23,27 @@ public class SimpleStackTest {
     }
 
     @Test
-    public void pushOneItemOnStackTestSize() {
-        Object val = 1;
-        stack.push(val);
-        assertEquals(1,stack.getSize());
-    }
-
-    @Test
-    public void pushTwoItemsOnStackTestSize() {
-        Object val1 = 1;
-        Object val2 = 2;
-        stack.push(val1);
-        stack.push(val2);
-        assertEquals(2,stack.getSize());
-    }
-
-    @Test
     public void testEmptyStack() {
-        assertTrue(stack.isEmpty());
+        assertTrue("Failed no items in stack ",stack.isEmpty());
+    }
+
+    @Test
+    public void testEmptyStackSize(){
+        assertEquals(0,stack.getSize());
     }
 
     @Test
     public void testNonEmptyStack() {
         Object val1 = 1;
         stack.push(val1);
-        assertFalse(stack.isEmpty());
+        assertFalse("Failed items in stack ",stack.isEmpty());
     }
 
     @Test
-    public void testEmptyStackSize(){
-        assertEquals(0,stack.getSize());
+    public void testNonEmptyStackSize() {
+        Object val = 1;
+        stack.push(val);
+        assertEquals("Failed adding item to the stack ",1,stack.getSize());
     }
 
     @Test (expected = EmptyStackException.class)
@@ -61,12 +52,12 @@ public class SimpleStackTest {
     }
 
     @Test
-    public void testPeek() {
+    public void testPeekNonEmptyStack() {
         Object str = "helloWorld";
         stack.push(str);
         assertEquals(str, stack.peek());
     }
-
+    
     @Test (expected = EmptyStackException.class)
     public void testPopOnEmptyStack() {
         stack.pop();
