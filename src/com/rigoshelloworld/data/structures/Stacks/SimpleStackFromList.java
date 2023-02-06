@@ -12,7 +12,7 @@ import java.util.List;
  * search,              DONE
  * size                 DONE
  */
-class SimpleStackFromList<T> implements IStack<T>{
+public class SimpleStackFromList<T> implements IStack<T>{
     List<T> list;
 
     public SimpleStackFromList() {
@@ -40,7 +40,7 @@ class SimpleStackFromList<T> implements IStack<T>{
 
     @Override
     public T pop() {
-        if (list.isEmpty()) {
+        if (!list.isEmpty()) {
             T element = list.get(list.size() - 1);
             list.remove(list.size() - 1);
             return element;
@@ -58,7 +58,7 @@ class SimpleStackFromList<T> implements IStack<T>{
         if(!list.isEmpty()) {
             int pos = 1;
             
-            for(int i = list.size() -1; i > 0; i--) {
+            for(int i = list.size() -1; i >= 0; i--) {
                 T element = list.get(i);
                 if(element.equals(data))
                     return pos;
